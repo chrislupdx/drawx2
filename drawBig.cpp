@@ -20,10 +20,8 @@ int main()
 
 	//requests an integer
 	requestNumb(int1);
-	cout << "in main, in1 is: " << int1 << endl;
-
-	//drawrow only draws ONE row we need a function that
-	//calculates and runs the row
+	
+	drawRow(int1);
 	
 
 	return 0;
@@ -31,9 +29,12 @@ int main()
 
 int drawRow(int a){
 string shape;
+int i;
 //draw a line of the given integer size
-//
-
+for (i=0; i<a; i++)
+{
+	cout <<"*";
+}
 
 
 return 0;
