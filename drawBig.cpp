@@ -10,7 +10,7 @@ using namespace std;
 
 //not sure what params drawRow should i/o
 int drawRow(int a);
-int requestNumb(int int1);
+int requestNumb(int& int1);
 
 int main()
 {
@@ -20,6 +20,7 @@ int main()
 
 	//requests an integer
 	requestNumb(int1);
+	cout << "in main, in1 is: " << int1 << endl;
 
 	//drawrow only draws ONE row we need a function that
 	//calculates and runs the row
@@ -40,7 +41,7 @@ return 0;
 
 //the user request prompt is in a funciton
 //needs to have logic to reject negatives, quits on zero
-int requestNumb(int int1)
+int requestNumb(int& int1)
 {
 	cout << "gimme an integer" << endl;
 	cin >> int1;
