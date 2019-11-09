@@ -8,8 +8,8 @@
 
 using namespace std;
 
-//not sure what params drawRow should i/o
 void drawRow(int a);
+void drawX(int a);
 int requestNumb(int& int1);
 char requestChar(char& char1);
 
@@ -17,13 +17,13 @@ int main()
 {
 	int int1;
 	char char1;
-	cout << "this is what it will do" << endl;
+//	cout << "this is what it will do" << endl;
 
 	//requests an integer
 	requestNumb(int1);
-	requestChar(char1);
-	drawRow(int1);
-	
+//	requestChar(char1);
+//	cout << "in main int1= " << int1 << endl;
+	drawX(int1);	
 
 	return 0;
 }
@@ -37,7 +37,24 @@ for (i=0; i<a; i++)
 {
 	cout <<"*";
 }
+	cout << endl;
 }
+
+void drawX(int a){
+int i;
+
+//draws the top half
+for (i = a; i > 0; i--)
+{
+
+//	cout << "i is " << i << endl;
+	drawRow(i);
+//rawrow number equivalent to appropriate row number
+}
+
+//draws the bottom half
+}
+
 
 //the user request prompt is in a funciton rejects negatives, 
 //needs to quit on zero
