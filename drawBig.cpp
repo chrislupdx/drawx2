@@ -9,7 +9,7 @@
 using namespace std;
 
 //not sure what params drawRow should i/o
-int drawRow(int a);
+void drawRow(int a);
 int requestNumb(int& int1);
 
 int main()
@@ -27,7 +27,7 @@ int main()
 	return 0;
 }
 
-int drawRow(int a){
+void drawRow(int a){
 string shape;
 int i;
 //draw a line of the given integer size
@@ -37,13 +37,15 @@ for (i=0; i<a; i++)
 }
 
 
-return 0;
 }
 
-//the user request prompt is in a funciton
-//needs to have logic to reject negatives, quits on zero
+//the user request prompt is in a funciton rejects negatives, 
+//needs to quit on zero
 int requestNumb(int& int1)
 {
+do {
 	cout << "gimme an integer" << endl;
 	cin >> int1;
+   }
+while(int1 < 0);
 }
