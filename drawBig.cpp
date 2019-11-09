@@ -9,7 +9,7 @@
 using namespace std;
 
 //not sure what params drawRow should i/o
-int drawRow(int a, int b);
+int drawRow(int a);
 int requestNumb(int int1);
 
 int main()
@@ -28,7 +28,7 @@ int main()
 	return 0;
 }
 
-int drawRow(int a, int b){
+int drawRow(int a){
 string shape;
 //draw a line of the given integer size
 //
