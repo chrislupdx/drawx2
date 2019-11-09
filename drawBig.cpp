@@ -43,16 +43,17 @@ for (i=0; i<a; i++)
 void drawX(int a){
 int i;
 
-//draws the top half
+//draws the top half chars
 for (i = a; i > 0; i--)
 {
-
-//	cout << "i is " << i << endl;
 	drawRow(i);
-//rawrow number equivalent to appropriate row number
 }
 
 //draws the bottom half
+for (i = 0; i < a; i++)
+{
+	drawRow(i);
+}
 }
 
 
