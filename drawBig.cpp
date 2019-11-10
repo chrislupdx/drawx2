@@ -41,36 +41,16 @@ left = 0;
 right = ogA;
 a = ogA;
 
-//iterate through the produced strings and do things with it
+
 for (i = 0; i < a; i++)
 {
 	line.insert(left,".");
 }
 
-//we need to iterate through the string itself...
-
-//pre-produce a string and edit it?
-//do
-//{
-//	line.insert(left,".");
-//}
-//while (line.length() < ogA);
-
-//while (line.length() == 0)
-//{
-//	line + shape;
-//}
-
-
-//inject markers to proper position
-//line.replace(left, 1, shape);
-
-//cout << "line.length is " << line.length();
 if (line.length() == ogA){
 	line.replace(right - 1 , 1 , "*");
-
 }
-
+line.replace(0, 1, "*");
 
 //prints line
 cout << line << endl;
