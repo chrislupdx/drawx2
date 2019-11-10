@@ -20,10 +20,9 @@ int main()
 //	cout << "this is what it will do" << endl;
 
 	//requests an integer
-	requestNumb(int1);
-//	requestChar(char1);
+//	requestNumb(int1);
+	requestChar(char1);
 //	cout << "in main int1= " << int1 << endl;
-	drawX(int1);	
 
 	return 0;
 }
@@ -68,9 +67,17 @@ do {
 while(int1 < 0);
 }
 
-//Requests character to draw the X with
+//Requests character to draw the X with, if char is 0, dealer's choice
 char requestChar(char& char1)
 {
 	cout << "gimme a char" << endl;
+
 	cin >> char1;
+	if(char1 == '0')
+	{
+		char1 = '&';
+	} 
+	
+
+	cout << "char1 is " << char1 << endl;
 }
