@@ -8,8 +8,8 @@
 //#include <string>
 using namespace std;
 
-void drawRow(int a, char char1);
-void drawX(int a, char char1);
+void drawRow(int a, char char1, int ogA);
+void drawX(int a, char char1, int ogA);
 int requestNumb(int& int1);
 char requestChar(char& char1);
 
@@ -17,65 +17,60 @@ int main()
 {
 	int int1;
 	char char1;
+	int ogA;
 //	cout << "this is what it will do" << endl;
-
 	//requests an integer
 	requestNumb(int1);
-
+	ogA = int1;
 	//requests a character
 	requestChar(char1);
 
 	//draws the X
-	drawX(int1, char1);
+	drawX(int1, char1, ogA);
 	return 0;
 }
 
 
 //draw # of chars of given integer size
-void drawRow(int a, char char1){
-
+void drawRow(int a, char char1, int ogA){
 string shape;
 int i;
 
-//for the the usr-given number, 
-for (i=0; i <= a; i++)
+for (i = 0; i < (ogA - a); i++)
+	cout <<"i";
 
-	{
-	//the first and last characters are marked, else are dots
-//	if (i == 0 || i == a) {
-	if (i == 0){
-	cout << char1;
+for (i=0; i <= a; i++)
+{
+
+//the first and last characters are marked, else are dots
+if (i == 0 || i == a)
+	{  
+   cout << char1;
 	}
-	else {
-	cout << '.';	
-	}	
-	if (i == a){
-	cout << char1;
-	}	
-	
-//the way this one is printing needs moar dynamic	
+else 
+	{  
+   cout << '.';
 	}
-	//if iterable position is before the marker's spot add x spaces
-	//where x is i - (not sure)
+}
+//where x is i - (not sure) [WHERE ELSE WILL DO DO SPACING]
 	cout << endl;
 }
 
-void drawX(int a, char char1){
-
+void drawX(int a, char char1, int ogA){
 int i;
 
 //draws the top half chars
 for (i = a; i > 0; i--)
 	{
 //	cout << "i is" << i << endl;
-	drawRow(i, char1);
+	drawRow(i, char1, ogA);
 	}
 
 //draws the bottom half
-for (i = 0; i <= a; i++)
+for (i = 0; i < a; i++)
 	{
 //	cout << "i is" << i << endl;
-	drawRow(i, char1);
+	drawRow(i, char1, ogA);
 	}
 }
 
