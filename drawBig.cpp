@@ -32,7 +32,7 @@ int main()
 
 //draw # of chars of given integer size
 void drawRow(int a, string char1, int ogA){
-string shape;
+string shape = char1;
 string line = "";
 int i;
 int left, right;
@@ -41,18 +41,16 @@ left = 0;
 right = ogA;
 a = ogA;
 
-
 for (i = 0; i < a; i++)
 {
-	line.insert(left,".");
+	line.insert(left, ".");
 }
 
 if (line.length() == ogA){
-	line.replace(right - 1 , 1 , "*");
+	line.replace(right - 1 , 1 , shape);
 }
-line.replace(0, 1, "*");
+line.replace(0, 1, shape);
 
-//prints line
 cout << line << endl;
 }
 
