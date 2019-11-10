@@ -37,16 +37,26 @@ void drawRow(int a, char char1){
 string shape;
 int i;
 
-for (i=0; i <=a; i++)
+//for the the usr-given number, 
+for (i=0; i <= a; i++)
+
 	{
-	if (i == 0) {
+	//the first and last characters are marked, else are dots
+//	if (i == 0 || i == a) {
+	if (i == 0){
 	cout << char1;
 	}
-	if (i == a) {
+	else {
+	cout << '.';	
+	}	
+	if (i == a){
 	cout << char1;
 	}	
-	cout << '.';
+	
+//the way this one is printing needs moar dynamic	
 	}
+	//if iterable position is before the marker's spot add x spaces
+	//where x is i - (not sure)
 	cout << endl;
 }
 
@@ -55,14 +65,16 @@ void drawX(int a, char char1){
 int i;
 
 //draws the top half chars
-for (i = a; i >= 0; i--)
+for (i = a; i > 0; i--)
 	{
+//	cout << "i is" << i << endl;
 	drawRow(i, char1);
 	}
 
 //draws the bottom half
-for (i = 0; i < a; i++)
+for (i = 0; i <= a; i++)
 	{
+//	cout << "i is" << i << endl;
 	drawRow(i, char1);
 	}
 }
@@ -85,6 +97,7 @@ char requestChar(char& char1)
 	cout << "gimme a char" << endl;
 
 	cin >> char1;
+	cout << endl;
 	if(char1 == '0')
 	{
 		char1 = '&';
