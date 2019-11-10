@@ -36,8 +36,8 @@ void drawRow(int a, char char1, int ogA){
 string shape;
 int i;
 
-for (i = 0; i < (ogA - a); i++)
-	cout <<"i";
+for (i = 0; i < ((ogA - a) / 2); i++)
+	cout <<".";
 
 for (i=0; i <= a; i++)
 {
