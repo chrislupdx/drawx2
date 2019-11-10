@@ -8,15 +8,15 @@
 //#include <string>
 using namespace std;
 
-void drawRow(int a, char char1, int ogA);
-void drawX(int a, char char1, int ogA);
+void drawRow(int a, string char1, int ogA);
+void drawX(int a, string char1, int ogA);
 int requestNumb(int& int1);
-char requestChar(char& char1);
+char requestChar(string& char1);
 
 int main()
 {
 	int int1;
-	char char1;
+	string char1;
 	int ogA;
 //	cout << "this is what it will do" << endl;
 	//requests an integer
@@ -31,7 +31,7 @@ int main()
 }
 
 //draw # of chars of given integer size
-void drawRow(int a, char char1, int ogA){
+void drawRow(int a, string char1, int ogA){
 string shape;
 int i;
 
@@ -53,12 +53,13 @@ else
 }
 
 for (i = 0; i < ((ogA - a) / 2); i++)
-	cout << ".";
-
+{
+cout << ".";
+}
 	cout << endl;
 }
 
-void drawX(int a, char char1, int ogA){
+void drawX(int a, string char1, int ogA){
 int i;
 
 //draws the top half chars
@@ -89,13 +90,13 @@ while(int1 < 0);
 }
 
 //Requests character to draw the X with, if char is 0, dealer's choice
-char requestChar(char& char1)
+char requestChar(string& char1)
 {
 	cout << "gimme a char" << endl;
 
 	cin >> char1;
 	cout << endl;
-	if(char1 == '0')
+	if(char1 == "0")
 	{
 		char1 = '&';
 	} 
