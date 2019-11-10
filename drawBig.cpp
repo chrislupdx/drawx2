@@ -30,7 +30,6 @@ int main()
 	return 0;
 }
 
-
 //draw # of chars of given integer size
 void drawRow(int a, char char1, int ogA){
 string shape;
@@ -52,7 +51,10 @@ else
    cout << '.';
 	}
 }
-//where x is i - (not sure) [WHERE ELSE WILL DO DO SPACING]
+
+for (i = 0; i < ((ogA - a) / 2); i++)
+	cout << ".";
+
 	cout << endl;
 }
 
