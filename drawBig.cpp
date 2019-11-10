@@ -33,57 +33,35 @@ int main()
 //draw # of chars of given integer size
 void drawRow(int a, string char1, int ogA){
 string shape;
+string line = "";
 int i;
 int left, right;
 left = 0;
 right = ogA;
-//start spaces
-for (i = 0; i < ((ogA - a) / 2); i++)
-	cout <<".";
 
-for (i=0; i <= a; i++)
-{
+do {
+	line.insert(left, "*");
+//	cout << "line: " << line << endl;
+}
+while (line.length() < ogA);
 
-//the first and last characters are marked, else are dots
-if (i == left || i == right)
-	{  
-//   cout << char1;
-	}
-else 
-	{  
- cout << '.';
-	}
+	cout << line << endl;
 
-cout << "left before" << left << endl;
-cout << "right before" << right << endl;
-++left;
---right;
 }
 
-//start at first and last chars and increment inwards (+1/-1)
-//I think incrementng will work 
-
-// end row spaces
-for (i = 0; i < ((ogA - a) / 2); i++)
-{
-cout << ".";
-}
-	cout << endl;
-}
+//oh we need to produce a number of lines
 
 void drawX(int a, string char1, int ogA){
 int i;
-
-//should draw the whole shape
-for (i = a; i > 0; i--)
+//loops for number of times = input int
+for (i = 0; i < a; i++)
 	{
-//	cout << "i is" << i << endl;
 	drawRow(i, char1, ogA);
 	}
 }
 
 
-//the user request prompt is in a funciton rejects negatives, 
+//the user request prompt is in a funciton rejects negatives,
 //needs to quit on zero
 int requestNumb(int& int1)
 {
@@ -104,6 +82,6 @@ char requestChar(string& char1)
 	if(char1 == "0")
 	{
 		char1 = '&';
-	} 
+	}
 //	cout << "char1 is " << char1 << endl;
 }
