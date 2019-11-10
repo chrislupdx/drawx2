@@ -5,7 +5,7 @@
 
 #include <iomanip>
 #include <iostream>
-
+//#include <string>
 using namespace std;
 
 void drawRow(int a, char char1);
@@ -25,36 +25,46 @@ int main()
 	//requests a character
 	requestChar(char1);
 
+	//draws the X
 	drawX(int1, char1);
 	return 0;
 }
 
 
-//draw a line of the given integer size
+//draw # of chars of given integer size
 void drawRow(int a, char char1){
+
 string shape;
 int i;
-for (i=0; i<a; i++)
-{
+
+for (i=0; i <=a; i++)
+	{
+	if (i == 0) {
 	cout << char1;
-}
+	}
+	if (i == a) {
+	cout << char1;
+	}	
+	cout << '.';
+	}
 	cout << endl;
 }
 
 void drawX(int a, char char1){
+
 int i;
 
 //draws the top half chars
-for (i = a; i > 0; i--)
-{
+for (i = a; i >= 0; i--)
+	{
 	drawRow(i, char1);
-}
+	}
 
 //draws the bottom half
 for (i = 0; i < a; i++)
-{
+	{
 	drawRow(i, char1);
-}
+	}
 }
 
 
@@ -79,7 +89,5 @@ char requestChar(char& char1)
 	{
 		char1 = '&';
 	} 
-	
-
 //	cout << "char1 is " << char1 << endl;
 }
