@@ -41,8 +41,8 @@ right = ogA;
 
 do {
 	line.insert(left, "*");
-//	cout << "line: " << line << endl;
 }
+
 while (line.length() < ogA);
 
 	cout << line << endl;
