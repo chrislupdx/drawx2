@@ -36,20 +36,46 @@ string shape;
 string line = "";
 int i;
 int left, right;
+int strLen = line.size();
 left = 0;
 right = ogA;
+a = ogA;
 
-do {
-	line.insert(left, "*");
+//iterate through the produced strings and do things with it
+for (i = 0; i < a; i++)
+{
+	line.insert(left,".");
 }
 
-while (line.length() < ogA);
+//we need to iterate through the string itself...
 
-	cout << line << endl;
+//pre-produce a string and edit it?
+//do
+//{
+//	line.insert(left,".");
+//}
+//while (line.length() < ogA);
+
+//while (line.length() == 0)
+//{
+//	line + shape;
+//}
+
+
+//inject markers to proper position
+//line.replace(left, 1, shape);
+
+//cout << "line.length is " << line.length();
+if (line.length() == ogA){
+	line.replace(right - 1 , 1 , "*");
 
 }
 
-//oh we need to produce a number of lines
+
+//prints line
+cout << line << endl;
+}
+
 
 void drawX(int a, string char1, int ogA){
 int i;
