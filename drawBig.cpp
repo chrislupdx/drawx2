@@ -34,7 +34,7 @@ int main()
 void drawRow(int a, string char1, int ogA){
 string shape;
 int i;
-
+//start spaces
 for (i = 0; i < ((ogA - a) / 2); i++)
 	cout <<".";
 
@@ -52,6 +52,9 @@ else
 	}
 }
 
+//do we need to increment ot make this systematically grow
+
+// end row spaces
 for (i = 0; i < ((ogA - a) / 2); i++)
 {
 cout << ".";
