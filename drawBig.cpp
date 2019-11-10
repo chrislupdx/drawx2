@@ -34,6 +34,9 @@ int main()
 void drawRow(int a, string char1, int ogA){
 string shape;
 int i;
+int left, right;
+left = 0;
+right = ogA;
 //start spaces
 for (i = 0; i < ((ogA - a) / 2); i++)
 	cout <<".";
@@ -42,17 +45,23 @@ for (i=0; i <= a; i++)
 {
 
 //the first and last characters are marked, else are dots
-if (i == 0 || i == a)
+if (i == left || i == right)
 	{  
-   cout << char1;
+//   cout << char1;
 	}
 else 
 	{  
-   cout << '.';
+ cout << '.';
 	}
+
+cout << "left before" << left << endl;
+cout << "right before" << right << endl;
+++left;
+--right;
 }
 
-//do we need to increment ot make this systematically grow
+//start at first and last chars and increment inwards (+1/-1)
+//I think incrementng will work 
 
 // end row spaces
 for (i = 0; i < ((ogA - a) / 2); i++)
@@ -65,15 +74,8 @@ cout << ".";
 void drawX(int a, string char1, int ogA){
 int i;
 
-//draws the top half chars
+//should draw the whole shape
 for (i = a; i > 0; i--)
-	{
-//	cout << "i is" << i << endl;
-	drawRow(i, char1, ogA);
-	}
-
-//draws the bottom half
-for (i = 0; i < a; i++)
 	{
 //	cout << "i is" << i << endl;
 	drawRow(i, char1, ogA);
