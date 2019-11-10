@@ -8,8 +8,8 @@
 
 using namespace std;
 
-void drawRow(int a);
-void drawX(int a);
+void drawRow(int a, char char1);
+void drawX(int a, char char1);
 int requestNumb(int& int1);
 char requestChar(char& char1);
 
@@ -20,38 +20,40 @@ int main()
 //	cout << "this is what it will do" << endl;
 
 	//requests an integer
-//	requestNumb(int1);
-	requestChar(char1);
-//	cout << "in main int1= " << int1 << endl;
+	requestNumb(int1);
 
+	//requests a character
+	requestChar(char1);
+
+	drawX(int1, char1);
 	return 0;
 }
 
 
 //draw a line of the given integer size
-void drawRow(int a){
+void drawRow(int a, char char1){
 string shape;
 int i;
 for (i=0; i<a; i++)
 {
-	cout <<"*";
+	cout << char1;
 }
 	cout << endl;
 }
 
-void drawX(int a){
+void drawX(int a, char char1){
 int i;
 
 //draws the top half chars
 for (i = a; i > 0; i--)
 {
-	drawRow(i);
+	drawRow(i, char1);
 }
 
 //draws the bottom half
 for (i = 0; i < a; i++)
 {
-	drawRow(i);
+	drawRow(i, char1);
 }
 }
 
@@ -79,5 +81,5 @@ char requestChar(char& char1)
 	} 
 	
 
-	cout << "char1 is " << char1 << endl;
+//	cout << "char1 is " << char1 << endl;
 }
