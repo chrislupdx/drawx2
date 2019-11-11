@@ -40,10 +40,10 @@ for (i = 0; i < ogA; i++)
 {
 	line.insert(0, ".");
 }
-if (line.length() == right)
-{
+//if (line.length() == right)
+//{
 	line.replace(right, 1 , shape);
-}
+//}
 	line.replace(left, 1, shape);
 
 cout << line << endl;
