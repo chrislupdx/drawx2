@@ -30,28 +30,35 @@ int main()
 	return 0;
 }
 
-//draw # of chars of given integer size
 void drawRow(int a, string char1, int ogA){
 string shape = char1;
 string line = "";
 int i;
 int left, right;
-int strLen = line.size();
 left = 0;
 right = ogA;
-a = ogA;
 
-for (i = 0; i < a; i++)
+//encapsulateall 3 of these in a loop that repea
+
+for (i = 0; i < ogA; i++)
 {
 	line.insert(left, ".");
 }
-
-if (line.length() == ogA){
-	line.replace(right - 1 , 1 , shape);
+if (line.length() == right)
+{
+	line.replace(right, 1 , shape);
 }
-line.replace(0, 1, shape);
+	line.replace(left, 1, shape);
 
 cout << line << endl;
+
+--right;
+++left;
+//i'm having trouble figuring out the stop condition for this
+//left and right shoul decrement/increment each time it's run 
+//intuition says deal with the increments at a higher level,
+
+
 }
 
 
