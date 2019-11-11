@@ -8,7 +8,7 @@
 //#include <string>
 using namespace std;
 
-void drawRow(int a, string char1, int ogA);
+void drawRow(int a, string char1, int ogA, int left, int right);
 void drawX(int a, string char1, int ogA);
 int requestNumb(int& int1);
 char requestChar(string& char1);
@@ -30,19 +30,15 @@ int main()
 	return 0;
 }
 
-void drawRow(int a, string char1, int ogA){
+void drawRow(int a, string char1, int ogA, int left, int right){
 string shape = char1;
 string line = "";
 int i;
-int left, right;
-left = 0;
-right = ogA;
 
 //encapsulateall 3 of these in a loop that repea
-
 for (i = 0; i < ogA; i++)
 {
-	line.insert(left, ".");
+	line.insert(0, ".");
 }
 if (line.length() == right)
 {
@@ -52,25 +48,28 @@ if (line.length() == right)
 
 cout << line << endl;
 
---right;
-++left;
-//i'm having trouble figuring out the stop condition for this
-//left and right shoul decrement/increment each time it's run 
-//intuition says deal with the increments at a higher level,
-
-
 }
-
 
 void drawX(int a, string char1, int ogA){
 int i;
+int left, right;
+left = 0;
+right = ogA;
+
 //loops for number of times = input int
 for (i = 0; i < a; i++)
 	{
-	drawRow(i, char1, ogA);
+	drawRow(i, char1, ogA, left, right);
+	if (right > 0)
+	{	
+	--right;
+	}
+	if (left < ogA)
+	{
+	++left;
+	}
 	}
 }
-
 
 //the user request prompt is in a funciton rejects negatives,
 //needs to quit on zero
@@ -94,5 +93,4 @@ char requestChar(string& char1)
 	{
 		char1 = '&';
 	}
-//	cout << "char1 is " << char1 << endl;
 }
