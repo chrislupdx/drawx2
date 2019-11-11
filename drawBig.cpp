@@ -18,15 +18,21 @@ int main()
 	int int1;
 	string char1;
 	int ogA;
-//	cout << "this is what it will do" << endl;
+	cout << "this program takes an integer and character and draws an X of the size of the int with the character" << endl;
+
+while (int1 != 0)
+{
 	//requests an integer
 	requestNumb(int1);
 	ogA = int1;
+
 	//requests a character
 	requestChar(char1);
 
 	//draws the X
 	drawX(int1, char1, ogA);
+}
+
 	return 0;
 }
 
@@ -40,10 +46,7 @@ for (i = 0; i < ogA; i++)
 {
 	line.insert(0, ".");
 }
-//if (line.length() == right)
-//{
-	line.replace(right, 1 , shape);
-//}
+	line.replace(right, 1, shape);
 	line.replace(left, 1, shape);
 
 cout << line << endl;
@@ -54,7 +57,7 @@ void drawX(int a, string char1, int ogA){
 int i;
 int left, right;
 left = 0;
-right = ogA;
+right = ogA - 1;
 
 //loops for number of times = input int
 for (i = 0; i < a; i++)
