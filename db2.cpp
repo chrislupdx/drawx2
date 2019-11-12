@@ -41,35 +41,40 @@ int oneLine(string& line, char c, int ogA){
 int i;
 const char *d = &c;
 string dot = ".";
-
-//its writing everything to one stirng rn
-for (i = 0; i < ogA; i++)
-	line.insert(0, ".");	
-	
-	line.replace(0, 1, d);
-	line.replace(ogA, 1, d);
-
-//can we use a sentinal counter somehwere? Im pretty sure no because oneLine in its current config only goes off once
 cout << line << endl;
 return 0;
 
 }
 
-
 void drawX(int int1, char c, int ogA){
 string str = "";	
-int i;
+int i, x;
+const char *d = &c;
+string char1 = "";
+char dot = '.';
+int left = ogA;
+int right = 0;
+//the do/while loop to increment and decrement left and right.
+do
+{
 
-//while i is less than oga, 
+for (x = 0; x < ogA; x++)
+{
+	str.insert(0,1, dot);
+}
 
 oneLine(str, c, ogA);
 
+//str.replace(0,1, char1);
+//str.replace(ogA, 1, char1);
+
 for (i = 1; i < ogA; i++)
 {
-
 	cout << str << endl;
 }
 
+}
+while(i < ogA );
 }
 
 int requestNum(int& int1)
@@ -82,6 +87,8 @@ do
 }
 while(int1 < 0);
 }
+
+
 
 //requests acharacter to draw the x with, if the char is 0, dealer's choice
 char requestChar(char& c)
