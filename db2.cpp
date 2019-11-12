@@ -15,7 +15,7 @@ char requestChar(char& char1);
 int main()
 {
 	int int1;
-	string stringChar;
+	string stringChar, str;
 	char c;
 	int ogA;
 	cout << "this program takes an integer and char and draws an X of the size of the int with the character" << endl;
@@ -37,49 +37,48 @@ while (int1 != 0)
 	return 0;
 }
 
-int oneLine(string&, char c, int ogA){
-string line = "";
+int oneLine(string& line, char c, int ogA){
 int i;
-int left, right;
-left = ogA;
-right = 0;
+const char *d = &c;
+string dot = ".";
 
+//its writing everything to one stirng rn
 for (i = 0; i < ogA; i++)
-	{
-	line.insert(0, ".");
-if (i == right)
-{
-	line.erase(right , 1);
-	line.insert(right, 1, c);
-}
-//if (i == left - 1)
-//{
-//	line.insert((left -1), 1, ogA);
-//}
-//	cout << "left is" << left << endl;
+	line.insert(0, ".");	
+	
+	line.replace(0, 1, d);
+	line.replace(ogA, 1, d);
 
-	}	
+//can we use a sentinal counter somehwere? Im pretty sure no because oneLine in its current config only goes off once
 cout << line << endl;
-	return 0;
+return 0;
+
 }
 
-//make sure we get the args threaded right for the custom line function
+
 void drawX(int int1, char c, int ogA){
-string string;	
+string str = "";	
 int i;
 
-//loops for the number of times input
-for (i = 0; i < ogA; i++)
-	oneLine( string, c, ogA);
+//while i is less than oga, 
+
+oneLine(str, c, ogA);
+
+for (i = 1; i < ogA; i++)
+{
+
+	cout << str << endl;
 }
 
-//this prompts the use for a number, exits on zero
+}
+
 int requestNum(int& int1)
 {
 do 
 {
-	cout << "gimme an integer" << endl;
+	cout << "gimme a number" << endl;
 	cin >> int1;
+
 }
 while(int1 < 0);
 }
