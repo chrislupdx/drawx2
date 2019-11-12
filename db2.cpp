@@ -51,6 +51,8 @@ string str = "";
 int i, x;
 const char *d = &c;
 string char1 = "";
+char1.insert(0, 1, c);
+
 char dot = '.';
 int left = ogA;
 int right = 0;
@@ -62,15 +64,14 @@ for (x = 0; x < ogA; x++)
 {
 	str.insert(0,1, dot);
 }
+	cout << "char1 is" << char1 << endl;
 
-oneLine(str, c, ogA);
+str.replace(0,1, char1);
+str.replace(ogA, 1, char1);
 
-//str.replace(0,1, char1);
-//str.replace(ogA, 1, char1);
-
-for (i = 1; i < ogA; i++)
+for (i = 1; i <= ogA; i++)
 {
-	cout << str << endl;
+	oneLine(str, c, ogA);
 }
 
 }
